@@ -5,7 +5,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-sitemap",
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     {
