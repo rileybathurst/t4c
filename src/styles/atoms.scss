@@ -1,0 +1,14 @@
+.active {
+    display: flex;
+    background: salmon;
+    flex-direction: column;
+
+    a {
+        padding: 1rem;
+        border: 2px whitesmoke solid;
+    }
+}
+
+.inactive {
+    display: none;
+}
