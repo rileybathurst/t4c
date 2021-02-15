@@ -4,11 +4,28 @@
     flex-direction: column;
 
     a {
-        padding: 1rem;
-        border: 2px whitesmoke solid;
+        // padding: 1rem;
+        // border: 2px whitesmoke solid;
     }
 }
 
 .inactive {
     display: none;
+}
+
+table,
+td,
+th {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 2px lightgrey solid;
+  text-align: center;
+}
+
+th {
+    background: lightsteelblue;
 }

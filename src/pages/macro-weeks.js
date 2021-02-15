@@ -14,7 +14,7 @@ const headingStyles = {
 }
 
 // markup
-const ThisWeeksPage = ({ data }) => {
+const MacroWeeksPage = ({ data }) => {
   return (
     <main style={pageStyles}>
       <title>Not found</title>
@@ -24,19 +24,20 @@ const ThisWeeksPage = ({ data }) => {
           <thead>
             <tr>
               <th>Date</th>
-              <th>Country</th>
-              <th>Event</th>
-              <th>Type</th>
+              <th>Crncy</th>
+              <th>Outstanding</th>
+              <th>Comment</th>
             </tr>
           </thead>
           <tbody>
             
-          {data.allStrapiThisWeeks.edges.map(document => (
+          {data.allStrapiMacroWeeks.edges.map(document => (
             <tr>
               <td>{document.node.date}</td>
-              <td>{document.node.country}</td>
-              <td>{document.node.event}</td>
-              <td>{document.node.type}</td>
+              <td>{document.node.currency}</td>
+              {/* <td>{document.node.outstanding}</td> */}
+              <td></td>
+              <td>{document.node.comment}</td>
             </tr>
           ))}
           </tbody>
@@ -47,18 +48,17 @@ const ThisWeeksPage = ({ data }) => {
   )
 }
 
-export default ThisWeeksPage
+export default MacroWeeksPage
 
 export const pageQuery = graphql`  
-  query ThisWeeksQuery {
-    allStrapiThisWeeks {
+  query MacroWeeksQuery {
+    allStrapiMacroWeeks {
       edges {
         node {
           id
           date
-          event
-          country
-          type
+          currency
+          comment
         }
       }
     }

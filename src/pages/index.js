@@ -56,7 +56,7 @@ const descriptionStyle = {
 }
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <main style={pageStyles}>
       <title>Home Page</title>
@@ -71,7 +71,7 @@ const IndexPage = () => {
           </li>
 
           <li style={docLinkStyle}>
-            <Link style={linkStyle}>Politics</Link>
+            <Link style={linkStyle} to="curated-politics">Politics</Link>
           </li>
 
           <li style={docLinkStyle}>
@@ -80,10 +80,6 @@ const IndexPage = () => {
 
           <li style={docLinkStyle}>
             <Link style={linkStyle}>COVID</Link>
-          </li>
-
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Calendar</Link>
           </li>
 
           <li style={docLinkStyle}>
@@ -141,28 +137,20 @@ const IndexPage = () => {
             </tr>
           </thead>
           <tbody>
-            {/* A couple test rows */}
-            {/* This all seems pretty realistic to do on strapi */}
-            <tr>
-              <td>2/11/2021</td>
-              <td>China</td>
-              <td>Chinese new year holidays begin</td>
-              <td>Politics</td>
-            </tr>
-            
-            <tr>
-              <td>2/11/2021</td>
-              <td>MX</td>
-              <td>Overnight Rate</td>
-              <td>CB</td>
-            </tr>
+            {data.allStrapiThisWeeks.edges.map(document => (
+              <tr>
+                <td>{document.node.date}</td>
+                <td>{document.node.country}</td>
+                <td>{document.node.event}</td>
+                <td>{document.node.type}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </section>
 
       <section>
         <h2>The Week in Macro So Far</h2>
-
         <table>
           <thead>
             <tr>
@@ -173,12 +161,15 @@ const IndexPage = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>{/* date */}</td>
-              <td>GBP</td>
-              <td>{/* outstanding */}</td>
-              <td>BoE not signalling neg rates</td>
-            </tr>
+            {data.allStrapiMacroWeeks.edges.map(document => (
+              <tr>
+                <td>{document.node.date}</td>
+                <td>{document.node.currency}</td>
+                {/* <td>{document.node.outstanding}</td> */}
+                <td></td>
+                <td>{document.node.comment}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </section>
@@ -186,11 +177,11 @@ const IndexPage = () => {
       <section>
         <h2>Question Box</h2>
         <p>Tim will follow up</p>
-        <form>
+        <form name="contact" method="POST" data-netlify="true">
           <label for="name">Enter your name: </label>
           <input type="text" name="name" id="name" required />
           <textarea id="story" name="story" rows="5" cols="33">
-            It was a dark and stormy night...
+            Ask macro questions Tim will follow up on.
           </textarea>
 
           <input type="submit" value="Ask!" />
@@ -407,3 +398,31 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const IndexQuery = graphql`  
+  query IndexQuery {
+    allStrapiThisWeeks {
+      edges {
+        node {
+          id
+          date
+          event
+          country
+          type
+        }
+      }
+    }
+
+    allStrapiMacroWeeks {
+      edges {
+        node {
+          id
+          date
+          currency
+          comment
+        }
+      }
+    }
+
+  }
+`
