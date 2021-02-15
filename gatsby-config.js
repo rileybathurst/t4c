@@ -16,6 +16,17 @@ module.exports = {
       __key: "images",
     },
     {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: 'http://167.172.228.31',
+        contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
+          'this-weeks',
+          'user'
+        ],
+        queryLimit: 1000,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
