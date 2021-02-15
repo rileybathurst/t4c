@@ -33,9 +33,9 @@ const CuratedPoliticsPage = ({ data }) => {
       <button id="opener" onClick={openUp}>Select Subject Here</button>
 
       <ul id="veiled" className="inactive">
-      <li><Link to="/curated-politics/">All</Link></li>
-          <li><Link to="/curated-politics/usfiscal">US Fiscal</Link></li>
-          <li><Link to="/curated-politics/europe">Europe</Link></li>
+        <li><Link to="/curated-politics/">All</Link></li>
+        <li><Link to="/curated-politics/usfiscal">US Fiscal</Link></li>
+        <li><Link to="/curated-politics/europe">Europe</Link></li>
       </ul>
 
       <table>

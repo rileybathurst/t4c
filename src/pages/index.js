@@ -1,130 +1,110 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
+import SmallMenu from "../components/smallmenu"
+
+import FxImage from "../images/fx-image"
+import RatesImage from "../images/rates-image"
+import QuadImage from "../images/quad-image"
+import USDGraphImage from "../images/usd-graph-image"
+
+import "@fontsource/poppins"
+import "@fontsource/poppins/100.css" // Weight 500.
 import "../styles/atoms.scss"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
-}
+function openUp() {
+  var veiled = document.getElementById('veiled');
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
+  if (veiled.className === 'active'){
+      veiled.className = 'inactive';
+  } else {
+      veiled.className = 'active';
+  }
 }
 
 // markup
 const IndexPage = ({ data }) => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>T4C Macro</h1>
-      <p style={paragraphStyles}>Home Page For Internal Macro Content</p>
+    <main>
 
-      <nav>
-        <ul style={listStyles}>
+      <header>
+        <title>Home Page</title>
+        <h1 className="measured">T4C Macro</h1>
+        <h2 className="measured">Home Page For Internal Macro Content</h2>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Curated</Link>
+        <SmallMenu />
+      </header>
+
+      <nav id="menu_small" className="inactive">
+        <ul>
+
+          <li>
+            <Link>Curated</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle} to="curated-politics">Politics</Link>
+          <li>
+            <Link to="curated-politics">Politics</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Central Banking</Link>
+          <li>
+            <Link>Central Banking</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>COVID</Link>
+          <li>
+            <Link>COVID</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Calendar</Link>
+          <li>
+            <Link>Calendar</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Research</Link>
+          <li>
+            <Link>Research</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Positioning</Link>
+          <li>
+            <Link>Positioning</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>FX</Link>
+          <li>
+            <Link>FX</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Rates</Link>
+          <li>
+            <Link>Rates</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Equities</Link>
+          <li>
+            <Link>Equities</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Audio Corner</Link>
+          <li>
+            <Link>Audio Corner</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Firm Confrence Calls</Link>
+          <li>
+            <Link>Firm Confrence Calls</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>One On One</Link>
+          <li>
+            <Link>One On One</Link>
           </li>
 
-          <li style={docLinkStyle}>
-            <Link style={linkStyle}>Podcast Collection</Link>
+          <li>
+            <Link>Podcast Collection</Link>
           </li>
         </ul>
       </nav>
 
-      <section>
+      <nav id="menu_large">
+        <ul>
+          <li><Link to="this-week">This Week</Link></li>
+          <li><Link to="curated-politics">Politics</Link></li>
+          <li><Link>Podcast Collection</Link></li>
+        </ul>
+      </nav>
+
+      <section className="measured">
         <h2>This Week</h2>
 
         <table>
@@ -147,9 +127,11 @@ const IndexPage = ({ data }) => {
             ))}
           </tbody>
         </table>
+
+        <hr />
       </section>
 
-      <section>
+      <section className="measured">
         <h2>The Week in Macro So Far</h2>
         <table>
           <thead>
@@ -172,9 +154,11 @@ const IndexPage = ({ data }) => {
             ))}
           </tbody>
         </table>
+
+        <hr />
       </section>
 
-      <section>
+      <section className="measured">
         <h2>Question Box</h2>
         <p>Tim will follow up</p>
         <form name="contact" method="POST" data-netlify="true">
@@ -186,18 +170,42 @@ const IndexPage = ({ data }) => {
 
           <input type="submit" value="Ask!" />
         </form>
+
+        <hr />
       </section>
 
-      <section>
+      <section className="measured">
         <h2>Curated Politics</h2>
-        <p><a href="https://reactjs.org/docs/forms.html">https://reactjs.org/docs/forms.html</a><br />
-        Seems pretty logical it could update on this being changed without a submit</p>
-        <form>
-          <label for="subject-select">Select Subject Here: </label>
-          <select id="subject-select">
-            <option value="us-fiscal">US - Fiscal</option>
-          </select>
-        </form>
+
+        <button id="opener" onClick={openUp}>Select Subject Here</button>
+
+        <ul id="veiled" className="inactive">
+          <li><Link to="/curated-politics/">All</Link></li>
+          <li><Link to="/curated-politics/usfiscal">US Fiscal</Link></li>
+          <li><Link to="/curated-politics/europe">Europe</Link></li>
+        </ul>
+
+        <table className="vertical-space">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Thing</th>
+              <th>Details 1</th>
+              <th>Details 2</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          {data.allStrapiCuratedPolitics.edges.map(document => (
+            <tr>
+              <td>{document.node.date}</td>
+              <td>{document.node.thing}</td>
+              <td>{document.node.details1}</td>
+              <td></td>
+            </tr>
+            ))}
+          </tbody>
+        </table>
 
         <hr />
 
@@ -227,6 +235,8 @@ const IndexPage = ({ data }) => {
             </tr>
           </tbody>
         </table>
+
+        <hr />
       
         <h3>Bloomberg Macro Squawk Headlines for selected news feed.</h3>
 
@@ -249,9 +259,11 @@ const IndexPage = ({ data }) => {
           </tbody>
         </table>
 
+        <hr />
+
       </section>
 
-      <section>
+      <section className="measured">
         <h2>Street Research</h2>
         <form>
           <label for="subject-select">Select Subject Here: </label>
@@ -259,16 +271,12 @@ const IndexPage = ({ data }) => {
             <option value="us-fiscal">Research Macro</option>
           </select>
 
-          <hr />
-
           <p>Query type:</p>
           <input type="radio" id="messages" name="drone" value="messages" checked />
           <label for="huey">Messages</label>
 
           <input type="radio" id="word cloud" name="drone" value="word cloud" />
           <label for="dewey">Word Cloud</label>
-
-          <hr />
 
           <label for="select">Select tags to filter on</label>
           <input type="text" name="select" id="select" placeholder="Select tags to filter on" />
@@ -278,8 +286,6 @@ const IndexPage = ({ data }) => {
 
           <input type="radio" id="or" name="andor" value="or" />
           <label for="dewey">Or</label>
-
-          <hr />
 
           <label for="select">Select Senders to filter on</label>
           <input type="text" name="select" id="select" placeholder="Select senders to filter on" />
@@ -302,8 +308,6 @@ const IndexPage = ({ data }) => {
           <input type="checkbox" id="unread" name="unread" />
           <label for="horns">Unread</label>
 
-          <hr />
-
           <input type="radio" id="untagged" name="uei" value="untagged" />
           <label for="untagged">Untagged</label>
 
@@ -312,8 +316,6 @@ const IndexPage = ({ data }) => {
 
           <input type="radio" id="only" name="uei" value="only" />
           <label for="only">Include Only</label>
-
-          <hr />
 
           <label for="select">Enter subject search expression(s)</label>
           <input type="text" name="select" id="select" placeholder="Enter subject search expression(s)" />
@@ -357,14 +359,23 @@ const IndexPage = ({ data }) => {
           </tbody>
         </table>
 
+        <hr />
+
       </section> {/* Street Research */}
 
-      <section>
+      <section className="measured">
         <h2>Rates Positioning</h2>
         <p>Ps the Screenshots for Rates and FX positioning I will keep in final version </p>
+
+        <RatesImage />
+        <QuadImage />
+        <FxImage />
+        <USDGraphImage />
+
+        <hr />
       </section>
 
-      <section>
+      <section className="measured">
         <h2>Audio Center</h2>
 
         <h3>Firm Macro Confrence Calls</h3>
@@ -378,9 +389,11 @@ const IndexPage = ({ data }) => {
           </audio>
         </figure>
         <p>Transcripts</p>
+
+        <hr />
       </section>
 
-      <section>
+      <section className="measured">
         <h2>One on One Calls</h2>
 
         <form>
@@ -391,6 +404,8 @@ const IndexPage = ({ data }) => {
             <option value="us-fiscal">Politics</option>
           </select>
           </form>
+
+          <hr />
       </section>
 
     </main>
@@ -420,6 +435,18 @@ export const IndexQuery = graphql`
           date
           currency
           comment
+        }
+      }
+    }
+
+    allStrapiCuratedPolitics {
+      edges {
+        node {
+          id
+          date
+          thing
+          details1
+          subject
         }
       }
     }
