@@ -8,6 +8,8 @@ import ButtonDropper from "../components/buttondropper"
 import USDGraphImage from "../images/usd-graph-image"
 import FxImage from "../images/fx-image"
 import EquitiesImage from "../images/equities-image"
+import Rates2Image from "../images/rates-2-image"
+import Rates3Image from "../images/rates-3-image"
 
 import FirmCalls from "../sections/firm-calls"
 import Podcasts from "../sections/podcasts"
@@ -36,7 +38,7 @@ const IndexPage = ({ data }) => {
       <main>
 
       <section className="measured">
-        <h2>This Week</h2>
+        <h2><Link to="/this-week">This Week</Link></h2>
 
         <table>
           <thead>
@@ -63,7 +65,7 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className="measured">
-        <h2>The Week in Macro So Far</h2>
+        <h2><Link to="macro-weeks">The Week in Macro So Far</Link></h2>
         <table>
           <thead>
             <tr>
@@ -123,7 +125,7 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className="measured">
-        <h2>Curated Politics</h2>
+        <h2><Link to="curated-politics">Curated Politics</Link></h2>
 
         <button id="opener" onClick={openUp}>
           Select Subject Here
@@ -215,7 +217,7 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className="measured">
-        <h2>Street Research</h2>
+        <h2><Link to="research">Street Research</Link></h2>
         <ResearchForm />
 
         <table>
@@ -261,24 +263,27 @@ const IndexPage = ({ data }) => {
       </section> {/* Street Research */}
 
       <section className="measured">
-        <h2>Positioning</h2>
+        <h2><Link to="positioning">Positioning</Link></h2>
         
         <h3>Rates</h3>
-        <USDGraphImage />
+        {/* rates 2 and 3 are the tuesday morning call */}
+        <Rates2Image />
+        <Rates3Image />
 
         <h3>FX</h3>
-        <div className="max-30">
-          <FxImage />
+        <div className="max-30">{/* this goes above */}
+          <FxImage />{/* this is correct as fx */}
         </div>
+        <USDGraphImage />{/* this is also fx but it goes below */}
 
         <h3>Equities</h3>
-        <EquitiesImage />
+        <EquitiesImage />{/* this one is right as equities */}
 
         <hr />
       </section>
 
       <section className="measured">
-        <h2>Audio Center</h2>
+        <h2><Link to="audio-corner">Audio Center</Link></h2>
 
         <h3>Firm Macro Confrence Calls</h3>
         <FirmCalls />

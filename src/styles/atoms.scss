@@ -54,6 +54,14 @@ a:hover {
   color: darken($denim, 20);
 }
 
+h2 a {
+  color: darken($denim, 33);
+}
+
+h2 a:hover {
+  color: darken($denim, 50);
+}
+
 #menu_small {
   background: $denim;
   padding: 1rem;

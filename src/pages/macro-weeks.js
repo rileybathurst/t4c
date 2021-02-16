@@ -18,7 +18,7 @@ const MacroWeeksPage = ({ data }) => {
   return (
     <main style={pageStyles}>
       <title>Not found</title>
-      <h1 style={headingStyles}>This Weeks</h1>
+      <h1 style={headingStyles}>The Week in Macro So Far</h1>
 
         <table>
           <thead>

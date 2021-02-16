@@ -4,7 +4,7 @@ function FirmCalls() {
   return (
     <>
         <figure>
-            <figcaption>Bifurcated Internet:</figcaption>
+            <figcaption></figcaption>
             <audio
                 controls
                 src="https:\/\/files.freemusicarchive.org\/storage-freemusicarchive-org\/music\/WFMU\/FMA_Overlords\/Net_Neutrality_Sample_Pack\/FMA_Overlords_-_06_-_Bifurcated_Internet.mp3">
