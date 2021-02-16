@@ -3,6 +3,8 @@ import * as React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 
+import ResearchForm from "../sections/researchform"
+
 // styles
 const pageStyles = {
     color: "#232129",
@@ -24,76 +26,7 @@ const FxPage = () => {
         <title>Not found</title>
         <h1 style={headingStyles}>Street Research</h1>
 
-        <form>
-
-          {/* Select Subject */}
-          <label for="subject-select">Select Subject Here: 
-            <select id="subject-select">
-              <option value="us-fiscal">Research Macro</option>
-            </select>
-          </label>
-
-          <section>
-            <p>Query type:</p>
-            <input type="radio" id="messages" name="drone" value="messages" checked />
-            <label for="huey">Messages</label>
-
-            <input type="radio" id="word cloud" name="drone" value="word cloud" />
-            <label for="dewey">Word Cloud</label>
-          </section>
-
-          <label for="select">Select tags to filter on</label>
-          <input type="text" name="select" id="select" placeholder="Select tags to filter on" />
-
-          <input type="radio" id="and" name="andor" value="and" checked />
-          <label for="huey">And</label>
-
-          <input type="radio" id="or" name="andor" value="or" />
-          <label for="dewey">Or</label>
-
-          <label for="select">Select Senders to filter on</label>
-          <input type="text" name="select" id="select" placeholder="Select senders to filter on" />
-
-          <label for="select">Select sources to filter on</label>
-          <input type="text" name="select" id="select" placeholder="Select sources to filter on" />
-
-          <label for="start">From:</label>
-          <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
-          
-          <label for="start">To:</label>
-          <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
-
-          <label for="tentacles">Last # days</label>
-          <input type="number" id="tentacles" name="tentacles" min="10" max="100" />
-
-          <section>
-            <input type="checkbox" id="starred" name="starred" />
-            <label for="scales">Starred</label>
-
-            <label for="horns">Unread
-              <input type="checkbox" id="unread" name="unread" />
-            </label>
-          </section>
-
-          <section>
-            <label for="untagged">Untagged
-              <input type="radio" id="untagged" name="uei" value="untagged" />
-            </label>
-
-            <label for="exclude">Exclude
-              <input type="radio" id="exclude" name="uei" value="exclude" checked />
-            </label>
-
-            <label for="only">Include Only
-              <input type="radio" id="only" name="uei" value="only" />
-            </label>
-          </section>
-
-          <label for="select">Enter subject search expression(s)
-            <input type="text" name="select" id="select" placeholder="Enter subject search expression(s)" />
-          </label>
-
-        </form>
+        <ResearchForm />
 
         <table>
           <thead>

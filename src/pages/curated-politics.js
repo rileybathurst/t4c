@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 
 import Header from "../components/header"
 import Footer from "../components/footer"
+import ButtonDropper from "../components/buttondropper"
 
 // styles
 const pageStyles = {
@@ -36,7 +37,10 @@ const CuratedPoliticsPage = ({ data }) => {
       <title>Not found</title>
       <h1 style={headingStyles}>Curated Politics</h1>
 
-      <button id="opener" onClick={openUp}>Select Subject Here</button>
+      <button id="opener" onClick={openUp}>
+        Select Subject Here
+        <ButtonDropper />
+      </button>
 
       <ul id="veiled" className="inactive">
         <li><Link to="/curated-politics/">All</Link></li>
@@ -44,7 +48,7 @@ const CuratedPoliticsPage = ({ data }) => {
         <li><Link to="/curated-politics/europe">Europe</Link></li>
       </ul>
 
-      <table>
+      <table className="vertical-space">
           <thead>
             <tr>
               <th>Date</th>

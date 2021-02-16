@@ -3,15 +3,16 @@ import { Link } from "gatsby"
 
 import Header from "../components/header"
 import Footer from "../components/footer"
+import ButtonDropper from "../components/buttondropper"
 
-import FxImage from "../images/fx-image"
-import RatesImage from "../images/rates-image"
-import QuadImage from "../images/quad-image"
 import USDGraphImage from "../images/usd-graph-image"
+import FxImage from "../images/fx-image"
+import EquitiesImage from "../images/equities-image"
 
 import FirmCalls from "../sections/firm-calls"
 import Podcasts from "../sections/podcasts"
 import OneCalls from "../sections/onecalls"
+import ResearchForm from "../sections/researchform"
 
 import "@fontsource/poppins"
 import "@fontsource/poppins/100.css" // Weight 500.
@@ -124,7 +125,10 @@ const IndexPage = ({ data }) => {
       <section className="measured">
         <h2>Curated Politics</h2>
 
-        <button id="opener" onClick={openUp}>Select Subject Here</button>
+        <button id="opener" onClick={openUp}>
+          Select Subject Here
+          <ButtonDropper />
+        </button>
 
         <ul id="veiled" className="inactive">
           <li><Link to="/curated-politics/">All</Link></li>
@@ -212,61 +216,7 @@ const IndexPage = ({ data }) => {
 
       <section className="measured">
         <h2>Street Research</h2>
-        <form>
-          <label for="subject-select">Select Subject Here: </label>
-          <select id="subject-select">
-            <option value="us-fiscal">Research Macro</option>
-          </select>
-
-          <p>Query type:</p>
-          <input type="radio" id="messages" name="drone" value="messages" checked />
-          <label for="huey">Messages</label>
-
-          <input type="radio" id="word cloud" name="drone" value="word cloud" />
-          <label for="dewey">Word Cloud</label>
-
-          <label for="select">Select tags to filter on</label>
-          <input type="text" name="select" id="select" placeholder="Select tags to filter on" />
-
-          <input type="radio" id="and" name="andor" value="and" checked />
-          <label for="huey">And</label>
-
-          <input type="radio" id="or" name="andor" value="or" />
-          <label for="dewey">Or</label>
-
-          <label for="select">Select Senders to filter on</label>
-          <input type="text" name="select" id="select" placeholder="Select senders to filter on" />
-
-          <label for="select">Select sources to filter on</label>
-          <input type="text" name="select" id="select" placeholder="Select sources to filter on" />
-
-          <label for="start">From:</label>
-          <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
-          
-          <label for="start">To:</label>
-          <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31" />
-
-          <label for="tentacles">Last # days</label>
-          <input type="number" id="tentacles" name="tentacles" min="10" max="100" />
-
-          <input type="checkbox" id="starred" name="starred" />
-          <label for="scales">Starred</label>
-
-          <input type="checkbox" id="unread" name="unread" />
-          <label for="horns">Unread</label>
-
-          <input type="radio" id="untagged" name="uei" value="untagged" />
-          <label for="untagged">Untagged</label>
-
-          <input type="radio" id="exclude" name="uei" value="exclude" checked />
-          <label for="exclude">Exclude</label>
-
-          <input type="radio" id="only" name="uei" value="only" />
-          <label for="only">Include Only</label>
-
-          <label for="select">Enter subject search expression(s)</label>
-          <input type="text" name="select" id="select" placeholder="Enter subject search expression(s)" />
-        </form>
+        <ResearchForm />
 
         <table>
           <thead>
@@ -311,15 +261,18 @@ const IndexPage = ({ data }) => {
       </section> {/* Street Research */}
 
       <section className="measured">
-        <h2>Rates Positioning</h2>
-        <p>Ps the Screenshots for Rates and FX positioning I will keep in final version </p>
+        <h2>Positioning</h2>
+        
+        <h3>Rates</h3>
+        <USDGraphImage />
 
-        <RatesImage />
-        <QuadImage />
+        <h3>FX</h3>
         <div className="max-30">
           <FxImage />
         </div>
-        <USDGraphImage />
+
+        <h3>Equities</h3>
+        <EquitiesImage />
 
         <hr />
       </section>
