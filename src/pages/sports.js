@@ -2,12 +2,6 @@ import React, { Component } from 'react'
 import Select from 'react-select'
 import axios from 'axios'
 
-function Photos(props) {
-  return <li className="blocks-gallery-item">
-    <img src={props.photoSrc} alt={props.photoAlt} loading="lazy" />
-  </li>
-}
-
 function Loop(props) {
   return <>{props.circle}</>
 }
@@ -92,7 +86,3 @@ export default class App extends Component {
       )
     }
 }
-
-
-{/* Priest 2 implementation of gallery
-<Gallery loop={data.strapiService.gallery.map(photos => <Photos photoSrc={photos.url} /> )} /> */}

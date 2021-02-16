@@ -4,6 +4,8 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 
 import USDGraphImage from "../images/usd-graph-image"
+import FxImage from "../images/fx-image"
+import EquitiesImage from "../images/equities-image"
 
 // styles
 const pageStyles = {
@@ -24,9 +26,18 @@ const EquitiesPage = () => {
 
         <main style={pageStyles} className="measured">
         <title>Not found</title>
-        <h1 style={headingStyles}>Equities</h1>
-
+        <h1 style={headingStyles}>Positioning</h1>
+        
+        <h2>Rates</h2>
         <USDGraphImage />
+
+        <h2>FX</h2>
+        <div className="max-30">
+          <FxImage />
+        </div>
+
+        <h2>Equities</h2>
+        <EquitiesImage />
 
         </main>
         <Footer />

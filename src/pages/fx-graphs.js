@@ -26,8 +26,10 @@ const FxPage = () => {
         <title>Not found</title>
         <h1 style={headingStyles}>FX</h1>
 
-        <FxImage />
-
+        <div className="max-30">
+          <FxImage />
+        </div>
+        
         </main>
         <Footer />
     </>

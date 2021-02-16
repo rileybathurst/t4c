@@ -9,6 +9,10 @@ import RatesImage from "../images/rates-image"
 import QuadImage from "../images/quad-image"
 import USDGraphImage from "../images/usd-graph-image"
 
+import FirmCalls from "../sections/firm-calls"
+import Podcasts from "../sections/podcasts"
+import OneCalls from "../sections/onecalls"
+
 import "@fontsource/poppins"
 import "@fontsource/poppins/100.css" // Weight 500.
 import "../styles/atoms.scss"
@@ -96,6 +100,23 @@ const IndexPage = ({ data }) => {
 
           <input type="submit" value="Ask!" />
         </form>
+
+        <h3>Outstanding Questions</h3>
+
+        <table className="vertical-space">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Question</th>
+              </tr>
+            </thead>
+          <tbody>
+              <tr>
+                <td>2/1/21</td>
+                <td>Of the $600 checks from the December bill do we know what proportion have been spent already and do we have an assumption at how fast the following $1,400 will be spent presuming the bill passes in March?</td>
+              </tr>
+          </tbody>
+        </table>
 
         <hr />
       </section>
@@ -295,7 +316,9 @@ const IndexPage = ({ data }) => {
 
         <RatesImage />
         <QuadImage />
-        <FxImage />
+        <div className="max-30">
+          <FxImage />
+        </div>
         <USDGraphImage />
 
         <hr />
@@ -305,22 +328,15 @@ const IndexPage = ({ data }) => {
         <h2>Audio Center</h2>
 
         <h3>Firm Macro Confrence Calls</h3>
-        <figure>
-          <figcaption>Bifurcated Internet:</figcaption>
-          <audio
-              controls
-              src="https:\/\/files.freemusicarchive.org\/storage-freemusicarchive-org\/music\/WFMU\/FMA_Overlords\/Net_Neutrality_Sample_Pack\/FMA_Overlords_-_06_-_Bifurcated_Internet.mp3">
-                  Your browser does not support the
-                  <code>audio</code> element.
-          </audio>
-        </figure>
-        <p>Transcripts</p>
+        <FirmCalls />
 
         <hr />
-      </section>
+      
+        <h3>Podcasts</h3>
+        <Podcasts />
 
-      <section className="measured">
-        <h2>One on One Calls</h2>
+        <h3>One on One Calls</h3>
+        <OneCalls />
 
         <form>
           <label for="subject-select">Select topic Here: </label>

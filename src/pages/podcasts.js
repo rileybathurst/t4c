@@ -3,8 +3,6 @@ import * as React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 
-import QuadImage from "../images/quad-image"
-
 // styles
 const pageStyles = {
     color: "#232129",
@@ -31,8 +29,8 @@ const FxPage = () => {
           <audio
               controls
               src="https:\/\/files.freemusicarchive.org\/storage-freemusicarchive-org\/music\/WFMU\/FMA_Overlords\/Net_Neutrality_Sample_Pack\/FMA_Overlords_-_06_-_Bifurcated_Internet.mp3">
-                  Your browser does not support the
-                  <code>audio</code> element.
+                  Your browser does not support the <code>audio</code> element.
+                  <track default />
           </audio>
         </figure>
         <p>Transcripts</p>

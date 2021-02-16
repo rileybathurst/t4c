@@ -25,31 +25,30 @@ const ThisWeeksPage = ({ data }) => {
 
     <main style={pageStyles} className="measured">
       <title>Not found</title>
-      <h1 style={headingStyles}>This Weeks</h1>
+      <h1 style={headingStyles}>This Week</h1>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Country</th>
-              <th>Event</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-          {data.allStrapiThisWeeks.edges.map(document => (
-            <tr>
-              <td>{document.node.date}</td>
-              <td>{document.node.country}</td>
-              <td>{document.node.event}</td>
-              <td>{document.node.type}</td>
-            </tr>
-          ))}
-          </tbody>
-        </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Country</th>
+            <th>Event</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        {data.allStrapiThisWeeks.edges.map(document => (
+          <tr>
+            <td>{document.node.date}</td>
+            <td>{document.node.country}</td>
+            <td>{document.node.event}</td>
+            <td>{document.node.type}</td>
+          </tr>
+        ))}
+        </tbody>
+      </table>
 
-        <Link to="/">Go home</Link>.
     </main>
     <Footer />
     </>

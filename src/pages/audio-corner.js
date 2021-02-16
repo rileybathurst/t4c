@@ -3,7 +3,9 @@ import * as React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 
-import QuadImage from "../images/quad-image"
+import FirmCalls from "../sections/firm-calls"
+import Podcasts from "../sections/podcasts"
+import OneCalls from "../sections/onecalls"
 
 // styles
 const pageStyles = {
@@ -23,31 +25,23 @@ const FxPage = () => {
         <Header />
 
         <main style={pageStyles} className="measured">
-        <title>Not found</title>
-        <h1 style={headingStyles}>Audio Corner</h1>
+          <title>Not found</title>
+          <h1 style={headingStyles}>Audio Corner</h1>
 
 
-        <h2>Firm Macro Confrence Calls</h2>
+          <h2>Firm Macro Confrence Calls</h2>
+          <FirmCalls />
 
-        <hr />
+          <hr />
 
-        <h2>Podcasts</h2>
-        <figure>
-          <figcaption>Bifurcated Internet:</figcaption>
-          <audio
-              controls
-              src="https:\/\/files.freemusicarchive.org\/storage-freemusicarchive-org\/music\/WFMU\/FMA_Overlords\/Net_Neutrality_Sample_Pack\/FMA_Overlords_-_06_-_Bifurcated_Internet.mp3">
-                  Your browser does not support the
-                  <code>audio</code> element.
-          </audio>
-        </figure>
-        <p>Transcripts</p>
+          <h2>Podcasts</h2>
+          <Podcasts />
 
-        <hr />
+          <hr />
 
-        <h2>One On One Calls</h2>
-
-        
+          <h2>One On One Calls</h2>
+          <OneCalls />
+          
         </main>
         <Footer />
     </>
