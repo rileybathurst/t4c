@@ -9,6 +9,7 @@ body {
 html {font-size: 100%;} /*16px*/
 
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.75;
@@ -113,6 +114,8 @@ hr {
 .measured {
   max-width: 65rem;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .centered {
@@ -121,6 +124,15 @@ hr {
 
 h1 {
   margin-top: 3rem !important;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 button,
@@ -144,29 +156,51 @@ header {
   max-width: 65rem;
   margin: 0 auto;
 
+  h1,
+  h2 {
+    width: 100%;
+  }
+
   button {
     grid-row: 1;
     grid-column: 2;
     height: min-content;
     width: min-content;
     margin-top: 3rem;
-  }
-}
+    justify-self: end;
+
+    @media (min-width: 65rem) {
+      display: none;
+    } // @media
+  } // button
+} // header 
 
 #menu_large {
   max-width: 65rem;
   margin: 0 auto;
+
   > ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding-left: 0;
 
     > li {
       list-style: none;
       margin: 0.5rem 1rem;
-    }
-  }
-}
+    } // li
+  } // ul
+} // #menu_large
+
+header {
+  #menu_large {
+    display: none;
+    
+    @media (min-width: 65rem) {
+      display: block;
+    } // @media
+  } // #menu_large
+} // header
 
 input,
 textarea {
@@ -227,4 +261,23 @@ input[type=submit] {
 
 .vertical-space {
   margin-top: 1rem;
+}
+
+figure {
+  margin: 0;
+}
+
+audio {
+  background: $denim;
+  border-radius: 2px;
+}
+
+footer {
+  background: darken(whitesmoke, 10);
+  margin-top: 3rem;
+
+  h3 {
+    padding: 1rem;
+    margin-bottom: 3rem;
+  }
 }

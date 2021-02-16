@@ -1,7 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-import SmallMenu from "../components/smallmenu"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 import FxImage from "../images/fx-image"
 import RatesImage from "../images/rates-image"
@@ -25,84 +26,9 @@ function openUp() {
 // markup
 const IndexPage = ({ data }) => {
   return (
-    <main>
-
-      <header>
-        <title>Home Page</title>
-        <h1 className="measured">T4C Macro</h1>
-        <h2 className="measured">Home Page For Internal Macro Content</h2>
-
-        <SmallMenu />
-      </header>
-
-      <nav id="menu_small" className="inactive">
-        <ul>
-
-          <li>
-            <Link>Curated</Link>
-          </li>
-
-          <li>
-            <Link to="curated-politics">Politics</Link>
-          </li>
-
-          <li>
-            <Link>Central Banking</Link>
-          </li>
-
-          <li>
-            <Link>COVID</Link>
-          </li>
-
-          <li>
-            <Link>Calendar</Link>
-          </li>
-
-          <li>
-            <Link>Research</Link>
-          </li>
-
-          <li>
-            <Link>Positioning</Link>
-          </li>
-
-          <li>
-            <Link>FX</Link>
-          </li>
-
-          <li>
-            <Link>Rates</Link>
-          </li>
-
-          <li>
-            <Link>Equities</Link>
-          </li>
-
-          <li>
-            <Link>Audio Corner</Link>
-          </li>
-
-          <li>
-            <Link>Firm Confrence Calls</Link>
-          </li>
-
-          <li>
-            <Link>One On One</Link>
-          </li>
-
-          <li>
-            <Link>Podcast Collection</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <nav id="menu_large">
-        <ul>
-          <li><Link to="this-week">This Week</Link></li>
-          <li><Link to="curated-politics">Politics</Link></li>
-          <li><Link>Podcast Collection</Link></li>
-        </ul>
-      </nav>
+    <>
+      <Header />
+      <main>
 
       <section className="measured">
         <h2>This Week</h2>
@@ -405,10 +331,12 @@ const IndexPage = ({ data }) => {
           </select>
           </form>
 
-          <hr />
       </section>
 
     </main>
+
+      <Footer />
+    </>
   )
 }
 

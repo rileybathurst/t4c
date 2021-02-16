@@ -1,6 +1,9 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 
+import Header from "../../components/header"
+import Footer from "../../components/footer"
+
 // styles
 const pageStyles = {
   color: "#232129",
@@ -26,7 +29,9 @@ function openUp() {
 // markup
 const USFiscalCuratedPoliticsPage = ({ data }) => {
   return (
-    <main style={pageStyles}>
+    <>
+    <Header />
+    <main style={pageStyles} className="measured">
       <title>Not found</title>
       <h1 style={headingStyles}>Curated Politics / Europe</h1>
 
@@ -62,6 +67,8 @@ const USFiscalCuratedPoliticsPage = ({ data }) => {
 
         <Link to="/">Go home</Link>.
     </main>
+    <Footer />
+    </>
   )
 }
 
