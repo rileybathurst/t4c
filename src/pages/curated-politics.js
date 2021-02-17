@@ -36,7 +36,7 @@ const CuratedPoliticsPage = ({ data }) => {
         <li><Link to="/curated-politics/europe">Europe</Link></li>
       </ul>
 
-      <h3 className="vertical-space">Tim's Politics News Feed</h3>
+      <h3 className="vertical-space">Tim's Politics News Feed.</h3>
 
       <table className="vertical-space">
           <thead>
@@ -62,7 +62,7 @@ const CuratedPoliticsPage = ({ data }) => {
       
         <hr />
 
-      <h3>Bloomberg Macro Squawk Headlines for selected news feed.</h3>
+      <h3>Bloomberg Macro Squawk Headlines.</h3>
 
       <table className="vertical-space">
           <thead>

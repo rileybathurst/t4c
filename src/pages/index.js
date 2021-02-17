@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
       <main>
 
       <section className="measured">
-        <h2><Link to="/this-week">This Week</Link></h2>
+        <h2><Link to="/this-week">Calendar</Link></h2>
 
         <table>
           <thead>
@@ -67,7 +67,7 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className="measured">
-        <h2><Link to="macro-weeks">The Week in Macro So Far</Link></h2>
+        <h2><Link to="macro-weeks">Recent Macro Clippings</Link></h2>
         <table>
           <thead>
             <tr>

@@ -113,7 +113,15 @@ td {
   padding: 10px;
   border: 2px $denim solid;
   // text-align: center;
-  background: darken(whitesmoke, 2.5);
+  // background: darken(whitesmoke, 2.5);
+}
+
+tr:nth-child(odd) {
+  background: lighten(whitesmoke, 5);
+}
+
+tr:nth-child(even) {
+  background: darken(whitesmoke, 5);
 }
 
 th {
