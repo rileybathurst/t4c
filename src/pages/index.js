@@ -53,9 +53,9 @@ const IndexPage = ({ data }) => {
             {data.allStrapiThisWeeks.edges.map(document => (
               <tr>
                 <td>{document.node.date}</td>
-                <td>{document.node.country}</td>
+                <td><Link to={`/calendar/${document.node.country}`}>{document.node.country}</Link></td>
                 <td>{document.node.event}</td>
-                <td>{document.node.type}</td>
+                <td><Link to={`/calendar/${document.node.type}`}>{document.node.type}</Link></td>
               </tr>
             ))}
           </tbody>

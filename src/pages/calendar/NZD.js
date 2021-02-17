@@ -23,10 +23,10 @@ const CalendarNZDPage = ({ data }) => {
         <Header />
 
         <main className="measured">
-        <h1 className="headingStyles">Calendar</h1>
+        <h1><Link to="/calendar">Calendar</Link> / NZD</h1>
 
         <button id="opener" onClick={openUp}>
-          Select Subject Here
+        Select Country Here
           <ButtonDropper />
         </button>
 

@@ -23,7 +23,7 @@ const CalendarGeopoliticsPage = ({ data }) => {
         <Header />
 
         <main className="measured">
-        <h1 className="headingStyles">Calendar</h1>
+        <h1><Link to="/calendar">Calendar</Link> / Geopolitics</h1>
 
         <button id="opener" onClick={openUp}>
           Select Subject Here
