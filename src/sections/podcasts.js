@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "gatsby"
 
 function Podcasts() {
   return (
@@ -12,7 +13,7 @@ function Podcasts() {
                   <code>audio</code> element.
           </audio>
         </figure>
-        <p>Transcripts</p>
+        {/* <p>Transcripts</p> */}
         <table>
           <thead>
             <tr>
@@ -34,6 +35,7 @@ function Podcasts() {
             </tr>
           </tbody>
         </table>
+        <Link to="/podcasts" className="link-block">View More Rows &gt;&gt;</Link>
     </>
   );
 }

@@ -1,4 +1,17 @@
 import React from 'react'
+import { Link } from "gatsby"
+
+import ButtonDropper from "../components/buttondropper"
+
+function openUp() {
+  var veiled = document.getElementById('veiled');
+
+  if (veiled.className === 'active'){
+      veiled.className = 'inactive';
+  } else {
+      veiled.className = 'active';
+  }
+}
 
 function OneCalls() {
   return (
@@ -12,7 +25,13 @@ function OneCalls() {
                   <code>audio</code> element.
           </audio>
         </figure>
-        <p>Transcripts</p>
+        {/* <p>Transcripts</p> */}
+
+        <button className="button-wide">
+          Select Subject Here
+          <ButtonDropper />
+        </button>
+
         <table>
           <thead>
             <tr>
@@ -34,6 +53,8 @@ function OneCalls() {
             </tr>
           </tbody>
         </table>
+        <Link to="/one" className="link-block">View More Rows &gt;&gt;</Link>
+
     </>
   );
 }

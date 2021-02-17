@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "gatsby"
 
 function FirmCalls() {
   return (
@@ -13,7 +14,7 @@ function FirmCalls() {
             </audio>
         </figure>
 
-        <p>Transcripts</p>
+        {/* <p>Transcripts</p> */}
         
         <table>
             <thead>
@@ -36,6 +37,7 @@ function FirmCalls() {
             </tr>
             </tbody>
         </table>
+        <Link to="/calls" className="link-block">View More Rows &gt;&gt;</Link>
     </>
   );
 }

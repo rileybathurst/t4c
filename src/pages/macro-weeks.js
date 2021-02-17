@@ -1,6 +1,9 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 
+import Header from "../components/header"
+import Footer from "../components/footer"
+
 // styles
 const pageStyles = {
   color: "#232129",
@@ -16,7 +19,9 @@ const headingStyles = {
 // markup
 const MacroWeeksPage = ({ data }) => {
   return (
-    <main style={pageStyles}>
+    <>
+    <Header />
+    <main style={pageStyles} className="measured">
       <title>Not found</title>
       <h1 style={headingStyles}>The Week in Macro So Far</h1>
 
@@ -25,7 +30,6 @@ const MacroWeeksPage = ({ data }) => {
             <tr>
               <th>Date</th>
               <th>Crncy</th>
-              <th>Outstanding</th>
               <th>Comment</th>
             </tr>
           </thead>
@@ -35,16 +39,15 @@ const MacroWeeksPage = ({ data }) => {
             <tr>
               <td>{document.node.date}</td>
               <td>{document.node.currency}</td>
-              {/* <td>{document.node.outstanding}</td> */}
-              <td></td>
               <td>{document.node.comment}</td>
             </tr>
           ))}
           </tbody>
         </table>
 
-        <Link to="/">Go home</Link>.
     </main>
+    <Footer />
+    </>
   )
 }
 

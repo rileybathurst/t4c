@@ -73,7 +73,6 @@ const IndexPage = ({ data }) => {
             <tr>
               <th className="date-box">Date</th>
               <th>Crncy</th>
-              <th>Outstanding</th>
               <th>Comment</th>
             </tr>
           </thead>
@@ -82,8 +81,6 @@ const IndexPage = ({ data }) => {
               <tr>
                 <td>{document.node.date}</td>
                 <td>{document.node.currency}</td>
-                {/* <td>{document.node.outstanding}</td> */}
-                <td></td>
                 <td>{document.node.comment}</td>
               </tr>
             ))}
@@ -124,12 +121,13 @@ const IndexPage = ({ data }) => {
               </tr>
           </tbody>
         </table>
+        <Link to="/" className="link-block">View More Rows &gt;&gt;</Link>
         </section>
       </section>
 
       <section className="measured">
       <hr />
-      
+
         <h2><Link to="curated-politics">Curated Politics</Link></h2>
 
         <button id="opener" onClick={openUp}>
@@ -164,6 +162,7 @@ const IndexPage = ({ data }) => {
             ))}
           </tbody>
         </table>
+        <Link to="/curated-poitics" className="link-block">View More Rows &gt;&gt;</Link>
 
         <hr />
 
@@ -193,6 +192,7 @@ const IndexPage = ({ data }) => {
             </tr>
           </tbody>
         </table>
+        <Link to="/" className="link-block">View More Rows &gt;&gt;</Link>
 
         <hr />
       
@@ -216,6 +216,7 @@ const IndexPage = ({ data }) => {
             </tr>
           </tbody>
         </table>
+        <Link to="/" className="link-block">View More Rows &gt;&gt;</Link>
 
         <hr />
 
@@ -262,6 +263,7 @@ const IndexPage = ({ data }) => {
             </tr>
           </tbody>
         </table>
+        <Link to="/" className="link-block">View More Rows &gt;&gt;</Link>
 
         <hr />
 
@@ -298,17 +300,19 @@ const IndexPage = ({ data }) => {
         <h3>Podcasts</h3>
         <Podcasts />
 
+        <hr />
+
         <h3>One on One Calls</h3>
         <OneCalls />
 
-        <form>
+{/*         <form>
           <label for="subject-select">Select topic Here: </label>
           <select id="subject-select">
             <option value="us-fiscal">Fed</option>
             <option value="us-fiscal">Europe</option>
             <option value="us-fiscal">Politics</option>
           </select>
-          </form>
+          </form> */}
 
       </section>
 
