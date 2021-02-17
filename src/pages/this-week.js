@@ -12,9 +12,7 @@ const ThisWeeksPage = ({ data }) => {
     <Header />
 
     <main className="measured">
-      <title>Not found</title>
-      {/* <h1 style={headingStyles}>This Week</h1> */}
-      <h1 className="headingStyles">This Week</h1>
+      <h1 className="headingStyles">Calendar</h1>
 
       <table>
         <thead>
