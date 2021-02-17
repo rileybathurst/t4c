@@ -43,7 +43,7 @@ const IndexPage = ({ data }) => {
         <table>
           <thead>
             <tr>
-              <th>Date</th>
+              <th className="date-box">Date</th>
               <th>Country</th>
               <th>Event</th>
               <th>Type</th>
@@ -61,6 +61,8 @@ const IndexPage = ({ data }) => {
           </tbody>
         </table>
 
+        <Link to="/this-week" className="link-block">View More Rows &gt;&gt;</Link>
+
         <hr />
       </section>
 
@@ -69,7 +71,7 @@ const IndexPage = ({ data }) => {
         <table>
           <thead>
             <tr>
-              <th>Date</th>
+              <th className="date-box">Date</th>
               <th>Crncy</th>
               <th>Outstanding</th>
               <th>Comment</th>
@@ -87,29 +89,31 @@ const IndexPage = ({ data }) => {
             ))}
           </tbody>
         </table>
+        <Link to="/macro-weeks" className="link-block">View More Rows &gt;&gt;</Link>
 
         <hr />
       </section>
 
-      <section className="measured">
-        <h2>Question Box</h2>
-        <p>Tim will follow up</p>
-        <form name="contact" method="POST" data-netlify="true">
-          <label for="name">Enter your name: </label>
-          <input type="text" name="name" id="name" required />
-          <textarea id="story" name="story" rows="5" cols="33">
-            Ask macro questions Tim will follow up on.
-          </textarea>
+      <section className="measured split">
+        <section>
+          <h2>Question Box <span className="title-p">Tim will follow up</span></h2>
+          
+          <form name="contact" method="POST" data-netlify="true">
+            <label for="name" className="hide-the-a11y">Enter your name: </label>
+            <input type="text" name="name" id="name" placeholder="Enter your name:" required />
+            <textarea id="story" name="story" rows="5" cols="33" placeholder="Ask macro questions Tim will follow up on."></textarea>
 
-          <input type="submit" value="Ask!" />
-        </form>
+            <input type="submit" value="Ask!" />
+          </form>
+        </section>
 
+        <section>
         <h3>Outstanding Questions</h3>
 
         <table className="vertical-space">
             <thead>
               <tr>
-                <th>Date</th>
+                <th className="date-box">Date</th>
                 <th>Question</th>
               </tr>
             </thead>
@@ -120,11 +124,12 @@ const IndexPage = ({ data }) => {
               </tr>
           </tbody>
         </table>
-
-        <hr />
+        </section>
       </section>
 
       <section className="measured">
+      <hr />
+      
         <h2><Link to="curated-politics">Curated Politics</Link></h2>
 
         <button id="opener" onClick={openUp}>
@@ -141,7 +146,7 @@ const IndexPage = ({ data }) => {
         <table className="vertical-space">
           <thead>
             <tr>
-              <th>Date</th>
+              <th className="date-box">Date</th>
               <th>Thing</th>
               <th>Details 1</th>
               <th>Details 2</th>
@@ -167,7 +172,7 @@ const IndexPage = ({ data }) => {
         <table>
           <thead>
             <tr>
-              <th>Date</th>
+              <th className="date-box">Date</th>
               <th>Thing</th>
               <th>Details 1</th>
               <th>Details 2</th>
@@ -196,7 +201,7 @@ const IndexPage = ({ data }) => {
         <table>
           <thead>
             <tr>
-              <th>Date</th>
+              <th className="date-box">Date</th>
               <th>Headlines</th>
             </tr>
           </thead>
@@ -227,7 +232,7 @@ const IndexPage = ({ data }) => {
               <th>Read</th>
               <th>Sender</th>
               <th>Subject</th>
-              <th>Date</th>
+              <th className="date-box">Date</th>
               <th>Tags</th>
               <th>Source</th>
               <th>Star</th>
@@ -322,7 +327,7 @@ export const IndexQuery = graphql`
       edges {
         node {
           id
-          date
+          date(formatString: "M/D/YY")
           event
           country
           type
@@ -334,7 +339,7 @@ export const IndexQuery = graphql`
       edges {
         node {
           id
-          date
+          date(formatString: "M/D/YY")
           currency
           comment
         }
@@ -345,7 +350,7 @@ export const IndexQuery = graphql`
       edges {
         node {
           id
-          date
+          date(formatString: "M/D/YY")
           thing
           details1
           subject

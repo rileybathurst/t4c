@@ -8,10 +8,10 @@ import TightMenu from "./tightmenu"
 function Header() {
   return (
     <>
-      <header>
-        <title>Home Page</title>
-        <h1 className="measured"><Link to="/">T4C Macro</Link></h1>
-        <h2 className="measured">Home Page For Internal Macro Content</h2>
+      <header className="measured">
+        <title>T4C Macro</title>
+        <h1><Link to="/">T4C Macro</Link></h1>
+        <h2>Home Page For Internal Macro Content</h2>
 
         <SmallMenu />
       </header>
@@ -25,7 +25,6 @@ function Header() {
       <nav id="menu_large">
         <ul>
           <TightMenu />
-
         </ul>
       </nav>
     </>

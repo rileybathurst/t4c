@@ -80,7 +80,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          date
+          date(formatString: "M/D/YY")
           thing
           details1
           subject

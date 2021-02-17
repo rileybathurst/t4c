@@ -34,7 +34,7 @@ const CuratedPoliticsPage = ({ data }) => {
     <Header />
 
     <main style={pageStyles} className="measured">
-      <title>Not found</title>
+      <title>Curated Politics</title>
       <h1 style={headingStyles}>Curated Politics</h1>
 
       <button id="opener" onClick={openUp}>
@@ -84,7 +84,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          date
+          date(formatString: "M/D/YY")
           thing
           details1
           subject
