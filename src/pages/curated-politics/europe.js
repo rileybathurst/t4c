@@ -4,18 +4,6 @@ import { graphql, Link } from "gatsby"
 import Header from "../../components/header"
 import Footer from "../../components/footer"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
 function openUp() {
     var veiled = document.getElementById('veiled');
 
@@ -31,9 +19,8 @@ const USFiscalCuratedPoliticsPage = ({ data }) => {
   return (
     <>
     <Header />
-    <main style={pageStyles} className="measured">
-      <title>Not found</title>
-      <h1 style={headingStyles}>Curated Politics / Europe</h1>
+    <main className="measured">
+      <h1>Curated Politics / Europe</h1>
 
       <button id="opener" onClick={openUp}>Select Subject Here</button>
 
@@ -42,6 +29,8 @@ const USFiscalCuratedPoliticsPage = ({ data }) => {
           <li><Link to="/curated-politics/usfiscal">US Fiscal</Link></li>
           {/* <li><Link to="/curated-politics/europe">Europe</Link></li> */}
       </ul>
+
+      <h3 className="vertical-space">Tim's Politics News Feed for Europe.</h3>
 
       <table>
           <thead>
@@ -65,8 +54,29 @@ const USFiscalCuratedPoliticsPage = ({ data }) => {
           </tbody>
         </table>
 
-        <Link to="/">Go home</Link>.
-    </main>
+        <hr />
+
+      <h3>Bloomberg Macro Squawk Headlines for Europe.</h3>
+
+      <table className="vertical-space">
+          <thead>
+            <tr>
+            <th className="date-box">Date</th>
+              <th>Headline</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          {data.allStrapiBloombergSquawks.edges.map(document => (
+            <tr>
+              <td>{document.node.date}</td>
+              <td>{document.node.headline}</td>
+            </tr>
+            ))}
+          </tbody>
+        </table>
+
+      </main>
     <Footer />
     </>
   )
@@ -84,6 +94,16 @@ export const pageQuery = graphql`
           thing
           details1
           subject
+        }
+      }
+    }
+
+    allStrapiBloombergSquawks(filter: {subject: {eq: "europe"}}) {
+      edges {
+        node {
+          id
+          date(formatString: "M/D/YY")
+          headline
         }
       }
     }

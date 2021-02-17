@@ -23,6 +23,7 @@ module.exports = {
           'this-weeks',
           'macro-weeks',
           'curated-politics',
+          'bloomberg-squawks',
           'user'
         ],
         queryLimit: 1000,
