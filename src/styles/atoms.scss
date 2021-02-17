@@ -229,6 +229,17 @@ header {
     > li {
       list-style: none;
       margin: 0.5rem 1rem;
+
+      > ul {
+        padding-left: 0;
+        list-style: none;
+        
+        > li {
+          > a {
+            color: darken($denim, 20);
+          }
+        }
+      }
     } // li
   } // ul
 } // #menu_large
@@ -329,7 +340,7 @@ footer {
   background: darken(whitesmoke, 5);
   margin-top: 3rem;
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  // padding-bottom: 3rem;
 
   h3 {
     padding: 1rem;
@@ -417,4 +428,10 @@ footer {
 
 .thin-blue-line {
   border-bottom: 1px lighten($denim, 20) solid;
+}
+
+.footer-footer {
+  background: darken(whitesmoke, 10);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }

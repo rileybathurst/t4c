@@ -290,7 +290,7 @@ const IndexPage = ({ data }) => {
       </section>
 
       <section className="measured">
-        <h2><Link to="audio-corner">Audio Center</Link></h2>
+        <h2><Link to="audio-corner">Audio Corner</Link></h2>
 
         <h3>Firm Macro Confrence Calls</h3>
         <FirmCalls />
