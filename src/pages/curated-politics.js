@@ -5,18 +5,6 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import ButtonDropper from "../components/buttondropper"
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
 function openUp() {
     var veiled = document.getElementById('veiled');
 
@@ -33,9 +21,9 @@ const CuratedPoliticsPage = ({ data }) => {
     <>
     <Header />
 
-    <main style={pageStyles} className="measured">
+    <main className="measured">
       <title>Curated Politics</title>
-      <h1 style={headingStyles}>Curated Politics</h1>
+      <h1>Curated Politics</h1>
 
       <button id="opener" onClick={openUp}>
         Select Subject Here
@@ -48,10 +36,12 @@ const CuratedPoliticsPage = ({ data }) => {
         <li><Link to="/curated-politics/europe">Europe</Link></li>
       </ul>
 
+      <h3 className="vertical-space">Tim's Politics News Feed</h3>
+
       <table className="vertical-space">
           <thead>
             <tr>
-              <th>Date</th>
+            <th className="date-box">Date</th>
               <th>Thing</th>
               <th>Details 1</th>
               <th>Details 2</th>
@@ -65,6 +55,28 @@ const CuratedPoliticsPage = ({ data }) => {
               <td>{document.node.thing}</td>
               <td>{document.node.details1}</td>
               <td></td>
+            </tr>
+            ))}
+          </tbody>
+        </table>
+      
+        <hr />
+
+      <h3>Bloomberg Macro Squawk Headlines for selected news feed.</h3>
+
+      <table className="vertical-space">
+          <thead>
+            <tr>
+            <th className="date-box">Date</th>
+              <th>Headline</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          {data.allStrapiBloombergSquawks.edges.map(document => (
+            <tr>
+              <td>{document.node.date}</td>
+              <td>{document.node.headline}</td>
             </tr>
             ))}
           </tbody>
@@ -88,6 +100,16 @@ export const pageQuery = graphql`
           thing
           details1
           subject
+        }
+      }
+    }
+
+    allStrapiBloombergSquawks {
+      edges {
+        node {
+          id
+          date(formatString: "M/D/YY")
+          headline
         }
       }
     }
