@@ -443,3 +443,9 @@ footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+
+.three-quarters {
+  @media (min-width: 50rem) {
+    max-width: 75%;
+  }
+}

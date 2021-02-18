@@ -17,10 +17,12 @@ const EquitiesPage = () => {
         <main className="measured">
         <h1>COVID</h1>
         
-        <Covid1Image />
-        <Covid2Image />
-        <Covid3Image />
-        <Covid4Image />
+        <div className="three-quarters">
+          <Covid1Image />
+          <Covid2Image />
+          <Covid3Image />
+          <Covid4Image />
+        </div>
 
         </main>
         <Footer />
