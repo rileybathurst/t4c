@@ -171,7 +171,7 @@ const IndexPage = ({ data }) => {
 
         <hr />
 
-        <h3>Tim's Politics News Feed</h3>
+       {/*  <h3>Tim's Politics News Feed</h3>
 
         <table>
           <thead>
@@ -199,7 +199,7 @@ const IndexPage = ({ data }) => {
         </table>
         <Link to="/" className="link-block">View More Rows &gt;&gt;</Link>
 
-        <hr />
+        <hr /> */}
       
         <h3>Bloomberg Macro Squawk Headlines for selected news feed.</h3>
 
