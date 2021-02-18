@@ -151,8 +151,8 @@ const IndexPage = ({ data }) => {
             <tr>
               <th className="date-box">Date</th>
               <th>Thing</th>
-              <th>Details 1</th>
-              <th>Details 2</th>
+              <th>Details</th>
+              {/* <th>Details 2</th> */}
             </tr>
           </thead>
           <tbody>
@@ -162,7 +162,7 @@ const IndexPage = ({ data }) => {
               <td>{document.node.date}</td>
               <td>{document.node.thing}</td>
               <td>{document.node.details1}</td>
-              <td></td>
+              {/* <td></td> */}
             </tr>
             ))}
           </tbody>
@@ -211,14 +211,12 @@ const IndexPage = ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>21/01/08</td>
-              <td>Biden said the stimulus</td>
-            </tr>
-            <tr>
-              <td>21/01/08</td>
-              <td>Yellen faces Senate to sell</td>
-            </tr>
+            {data.allStrapiBloombergSquawks.edges.map(document => (
+              <tr>
+                <td>{document.node.date}</td>
+                <td>{document.node.headline}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
         <Link to="/" className="link-block">View More Rows &gt;&gt;</Link>
@@ -379,6 +377,16 @@ export const IndexQuery = graphql`
           thing
           details1
           subject
+        }
+      }
+    }
+
+    allStrapiBloombergSquawks {
+      edges {
+        node {
+          id
+          date(formatString: "M/D/YY")
+          headline
         }
       }
     }

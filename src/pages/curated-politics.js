@@ -43,8 +43,8 @@ const CuratedPoliticsPage = ({ data }) => {
             <tr>
             <th className="date-box">Date</th>
               <th>Thing</th>
-              <th>Details 1</th>
-              <th>Details 2</th>
+              <th>Details</th>
+              {/* <th>Details 2</th> */}
             </tr>
           </thead>
           <tbody>
@@ -54,7 +54,7 @@ const CuratedPoliticsPage = ({ data }) => {
               <td>{document.node.date}</td>
               <td>{document.node.thing}</td>
               <td>{document.node.details1}</td>
-              <td></td>
+              {/* <td></td> */}
             </tr>
             ))}
           </tbody>
