@@ -21,7 +21,7 @@ function Footer() {
                     <li><Link to="/">Europe</Link></li>
                   </ul>
                 </li>
-                <li><Link to="/">Research</Link></li>
+                <li><Link to="/research">Research</Link></li>
                 <li><Link to="/positioning">Positioning</Link>
                   <ul>
                     <li><Link to="/">Rates</Link></li>
@@ -31,11 +31,12 @@ function Footer() {
                 </li>
                 <li><Link to="/audio-corner">Audio Corner</Link>
                   <ul>
-                    <li><Link to="/">Rates</Link></li>
-                    <li><Link to="/">FX</Link></li>
-                    <li><Link to="/">Equities</Link></li>
+                    <li><Link to="/">Calls</Link></li>
+                    <li><Link to="/">Podcasts</Link></li>
+                    <li><Link to="/">One on One</Link></li>
                   </ul>
                 </li>
+                <li><Link to="/covid">COVID</Link></li>
             </ul>
         </nav>
 

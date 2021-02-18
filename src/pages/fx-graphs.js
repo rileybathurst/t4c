@@ -23,7 +23,6 @@ const FxPage = () => {
         <Header />
 
         <main style={pageStyles} className="measured">
-        <title>Not found</title>
         <h1 style={headingStyles}>FX</h1>
 
         <div className="max-30">

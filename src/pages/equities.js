@@ -23,7 +23,6 @@ const EquitiesPage = () => {
         <Header />
 
         <main style={pageStyles} className="measured">
-        <title>Not found</title>
         <h1 style={headingStyles}>Equities</h1>
 
         <RatesImage />

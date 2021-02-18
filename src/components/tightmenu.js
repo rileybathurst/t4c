@@ -9,6 +9,7 @@ function TightMenu() {
         <li><Link to="/research">Research</Link></li>
         <li><Link to="/positioning">Positioning</Link></li>
         <li><Link to="/audio-corner">Audio Corner</Link></li>
+        <li><Link to="/covid">COVID</Link></li>
     </>
   );
 }

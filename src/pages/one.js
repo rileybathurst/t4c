@@ -35,7 +35,6 @@ const FxPage = () => {
         <Header />
 
         <main style={pageStyles} className="measured">
-        <title>Not found</title>
         <h1 style={headingStyles}>One On One Calls</h1>
 
         <button id="opener" onClick={openUp}>Select Subject Here 

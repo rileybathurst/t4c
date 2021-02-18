@@ -14,8 +14,7 @@ const FxPage = () => {
         <Header />
 
         <main className="measured">
-          <title>Not found</title>
-          <h1>Audio Corner</h1>
+            <h1>Audio Corner</h1>
 
           <h2>Firm Macro Confrence Calls</h2>
           <FirmCalls />

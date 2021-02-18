@@ -23,7 +23,6 @@ const FxPage = () => {
         <Header />
 
         <main style={pageStyles} className="measured">
-        <title>Not found</title>
         <h1 style={headingStyles}>Firm Confrence Calls</h1>
 
         <figure>

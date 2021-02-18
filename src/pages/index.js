@@ -11,6 +11,11 @@ import EquitiesImage from "../images/equities-image"
 import Rates2Image from "../images/rates-2-image"
 import Rates3Image from "../images/rates-3-image"
 
+import Covid1Image from "../images/covid1-image"
+import Covid2Image from "../images/covid2-image"
+import Covid3Image from "../images/covid3-image"
+import Covid4Image from "../images/covid4-image"
+
 import FirmCalls from "../sections/firm-calls"
 import Podcasts from "../sections/podcasts"
 import OneCalls from "../sections/onecalls"
@@ -305,15 +310,17 @@ const IndexPage = ({ data }) => {
         <h3>One on One Calls</h3>
         <OneCalls />
 
-{/*         <form>
-          <label for="subject-select">Select topic Here: </label>
-          <select id="subject-select">
-            <option value="us-fiscal">Fed</option>
-            <option value="us-fiscal">Europe</option>
-            <option value="us-fiscal">Politics</option>
-          </select>
-          </form> */}
+        <hr />
 
+      </section>
+
+      <section className="measured">
+        <h2><Link to="/covid">COVID</Link></h2>
+        
+        <Covid1Image />
+        <Covid2Image />
+        <Covid3Image />
+        <Covid4Image />
       </section>
 
     </main>
