@@ -33,7 +33,7 @@ function FirmCalls() {
             <tr>
                 <td>02/09/2021</td>
                 <td>Global</td>
-                <td>Economics who has regained their Dec 2019 Real GDP Levels, whose next and where might never get back to their prior trend.</td>
+                <td>Economics: who has regained their Dec 2019 Real GDP Levels, whose next and where might never get back to their prior trend.</td>
             </tr>
             </tbody>
         </table>
